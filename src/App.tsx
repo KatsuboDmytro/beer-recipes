@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Route, Routes } from 'react-router';
 import { Header } from './common/components';
 import { RecipesPage } from './modules/recipes';
 
@@ -8,7 +9,10 @@ export const App: FC<AppProps> = () => {
   return (
       <>
         <Header />
-        <RecipesPage />
+        <Routes>
+          <Route path='/' element={<RecipesPage />} />
+          <Route path='/:id' element={<BeerInfoPage />} />
+        </Routes>
       </>
   );
 }
