@@ -8,10 +8,11 @@ interface BeerInfoPageProps {}
 
 export const BeerInfoPage: FC<BeerInfoPageProps> = () => {
   const { pathname } = useLocation();
-  const { beer } = useTakeBeer({ pathname });
+  const beerId = pathname.slice(1);
+  const { beer } = useTakeBeer({ beerId });
 
   return (
-    <>
+    <div className='relative top-32'>
       <Container>
         <div className='mb-24'>
           <h1 className="text-center text-6xl font-viga mb-8">
@@ -23,7 +24,7 @@ export const BeerInfoPage: FC<BeerInfoPageProps> = () => {
 
         <div className="flex justify-center flex-wrap mb-24">
           <Details beer={beer} />
-          <div className='w-96'>
+          <div className='w-84'>
             <img className='h-96 mx-auto' src={beer?.image_url} alt={`${beer?.name} beer`} />
           </div>
           <Ingredients beer={beer}/>
@@ -32,6 +33,6 @@ export const BeerInfoPage: FC<BeerInfoPageProps> = () => {
 
       <Pairing beer={beer} />
       <Quate beer={beer} />
-    </>
+    </div>
   );
 }

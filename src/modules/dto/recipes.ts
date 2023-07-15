@@ -1,5 +1,6 @@
 export interface BeerInfo {
   id: number;
+  isChecked: boolean;
   name: string;
   tagline: string;
   first_brewed: string;

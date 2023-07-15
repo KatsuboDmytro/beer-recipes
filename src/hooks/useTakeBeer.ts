@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { BeerInfo } from '../modules/dto/recipes';
 
 interface useTakeBeerProps {
-  pathname: string;
+  beerId: number | string;
 }
 
-export const useTakeBeer = ({ pathname }: useTakeBeerProps) => {
-  const beerId = pathname.slice(1);
+export const useTakeBeer = ({ beerId }: useTakeBeerProps) => {
   const [recipes, setRecipes] = useState<BeerInfo[]>([]);
+
 
   useEffect(() => {
     const storedData = localStorage.getItem('recipe-storage');

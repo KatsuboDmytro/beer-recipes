@@ -15,8 +15,9 @@ export const RecipesPage: FC<RecipesPageProps> = () => {
 
   return (
       <Container>
-        {recipes.map(beer => (
-          <BeerCard 
+        <div className="relative top-32">
+          {recipes.map(beer => (
+          <BeerCard
             key={beer.id}
             id={beer.id}
             image_url={beer.image_url}
@@ -24,8 +25,10 @@ export const RecipesPage: FC<RecipesPageProps> = () => {
             firstBrewed={beer.first_brewed}
             tagline={beer.tagline}
             description={beer.description}
+            checked={beer.isChecked}
           />
         ))}
+        </div>
       </Container>
   );
 }
