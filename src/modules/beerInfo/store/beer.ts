@@ -4,33 +4,32 @@ import axios from 'axios';
 import { BeerInfo } from '../../dto/recipes';
 
 interface RecipeState {
-  recipes: BeerInfo[];
+  beer: BeerInfo[];
   isLoading: boolean;
   errors: string[];
-  setRecipes: (recipes: BeerInfo[]) => void;
-  fetchRecipes: () => Promise<void>;
+  setBeer: (beer: BeerInfo[]) => void;
+  fetchBeer: (beerId: string) => Promise<void>;
 }
 
-export const useRecipeStore = create(
+export const useBeerStore = create(
   persist<RecipeState>(
     (set) => ({
-      recipes: [],
+      beer: [],
       isLoading: false,
       errors: [],
-      setRecipes: (recipes) => set({ recipes }),
-      fetchRecipes: async () => {
+      setBeer: (beer) => set({ beer }),
+      fetchBeer: async (beerId) => {
         try {
-          set({ isLoading: true });
-          const response = await axios.get<BeerInfo[]>('https://api.punkapi.com/v2/beers?page=1');
+          const response = await axios.get<BeerInfo[]>(`https://api.punkapi.com/v2/beers/${beerId}`);
           const data = response.data;
-          set({ isLoading: false, recipes: data });
+          set({ beer: data });
         } catch (error) {
           console.error('Error fetching recipes:', error);
         }
       },
     }),
     {
-      name: 'recipe-storage',
+      name: 'beer',
       getStorage: () => localStorage,
     }
   )

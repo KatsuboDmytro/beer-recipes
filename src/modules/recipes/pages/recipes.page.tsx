@@ -18,6 +18,7 @@ export const RecipesPage: FC<RecipesPageProps> = () => {
         {recipes.map(beer => (
           <BeerCard 
             key={beer.id}
+            id={beer.id}
             image_url={beer.image_url}
             name={beer.name}
             firstBrewed={beer.first_brewed}

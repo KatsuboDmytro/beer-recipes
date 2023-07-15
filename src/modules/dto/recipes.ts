@@ -41,7 +41,7 @@ export interface Malt {
 }
 
 export interface Method {
-  mash_temp: Mashtemp[];
+  mash_temp: Mashtemp;
   fermentation: Fermentation;
   twist?: any;
 }

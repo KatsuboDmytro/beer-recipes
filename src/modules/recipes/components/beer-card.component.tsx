@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom'
+import { DividingLine } from '../../../common/components';
 
-interface BeerCardProps {
+export interface BeerCardProps {
+  id: number;
   image_url: string;
   name: string;
   firstBrewed: string;
@@ -9,12 +11,12 @@ interface BeerCardProps {
   tagline: string;
 }
 
-export const BeerCard: FC<BeerCardProps> = ({ image_url, name, firstBrewed, tagline, description }) => {
+export const BeerCard: FC<BeerCardProps> = ({ id, image_url, name, firstBrewed, tagline, description }) => {
   return (
-    <Link to={'/:id'}>
+    <Link to={`/${id}`}>
       <div className='flex items-center border-2 border-gray-100 rounded-2xl p-6 mb-6 hover:bg-gray-100'>
         <img className='w-14' src={image_url} alt="beer" />
-        <div className="w-1 h-28 bg-amber-400 mx-8"></div>
+        <DividingLine direction={'vertical'} />
         <div className='w-full'>
           <div className="flex justify-between">
             <h1 className='text-5xl font-viga'>{name}</h1>
