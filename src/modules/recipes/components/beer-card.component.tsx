@@ -35,7 +35,7 @@ export const BeerCard: FC<BeerCardProps> = ({ id, image_url, name, firstBrewed, 
         <img className='w-14' src={image_url} alt="beer" />
         <DividingLine direction={'vertical'} />
         <div className='w-full'>
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-wrap">
             <h1 className='text-5xl font-viga'>{name}</h1>
             <span>{firstBrewed}</span>
           </div>

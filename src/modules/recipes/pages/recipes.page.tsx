@@ -10,18 +10,19 @@ export const RecipesPage: FC<RecipesPageProps> = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [fetching, setFetching] = useState<boolean>(true);
   const fetchRecipes = useRecipeStore((state) => state.fetchRecipes);
+  const updateRecipes = useRecipeStore((state) => state.updateRecipes);
   const [amountMin, setAmountMin] = useState<number>(0);
   const [amountMax, setAmountMax] = useState<number>(15);
   
   useEffect(() => {
     if(fetching){
-      fetchRecipes(currentPage, setFetching, setCurrentPage, amountMin, amountMax);/*видалення не з pagination, a recipes*/
+      fetchRecipes(currentPage, setFetching, setCurrentPage, amountMin, amountMax);
       window.scrollTo({
         top: document.documentElement.scrollTop = 0,
         behavior: 'smooth',
       });
     }
-  }, [fetchRecipes, currentPage, fetching, amountMin, amountMax]);
+  }, [fetchRecipes, updateRecipes, currentPage, fetching, amountMin, amountMax]);
 
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler);

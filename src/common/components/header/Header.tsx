@@ -7,10 +7,10 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const { pathname } = useLocation();
-  const recipes = useRecipeStore((state) => state.recipes);
+  const pagination = useRecipeStore((state) => state.pagination);
   const deleteBeers = useRecipeStore((state) => state.deleteBeers);
   
-  const filteredIds = recipes
+  const filteredIds = pagination
   .filter((beer: BeerInfo) => beer.isChecked)
   .map((beer: BeerInfo) => beer.id);
 
