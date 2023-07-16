@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useRecipeStore } from '../../../modules/recipes/store/recipes';
 import { BeerInfo } from '../../../modules/dto/recipes';
@@ -13,8 +13,6 @@ export const Header: FC<HeaderProps> = () => {
   const filteredIds = recipes
   .filter((beer: BeerInfo) => beer.isChecked)
   .map((beer: BeerInfo) => beer.id);
-
-  console.log(filteredIds)
 
   const handleDelete = (e: any) => {
     e.preventDefault();

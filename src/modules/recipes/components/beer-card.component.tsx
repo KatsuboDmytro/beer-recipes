@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { DividingLine } from '../../../common/components';
 import { useRecipeStore } from '../store/recipes';
@@ -24,10 +24,6 @@ export const BeerCard: FC<BeerCardProps> = ({ id, image_url, name, firstBrewed, 
     setIsChecked(!isChecked);
     updateRecipes(id, !isChecked);
   };
-
-  useEffect(() => {
-    updateRecipes(id, false);
-  }, []);
 
   return (
     <Link to={`/${id}`}>
