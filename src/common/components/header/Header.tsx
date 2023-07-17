@@ -22,7 +22,7 @@ export const Header: FC<HeaderProps> = () => {
   return (
     <div className="z-10 bg-white flex justify-center fixed w-full">
       <div className="w-3/4 flex justify-between">
-        <Link to='/beer-recipes/'>
+        <Link to='/'>
           <svg className='my-6 w-64' viewBox="0 0 287 75" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.00684 24.8501H34.0068V61.2361H4.00684V24.8501Z" fill="#FCEA2B"/>
             <path d="M25.5328 24.8501L18.0068 61.2361H34.0068V24.8501H25.5328Z" fill="#F1B31C"/>
