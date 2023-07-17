@@ -2,6 +2,7 @@
   "name": "beer-recipes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://katsubodmytro.github.io/beer-recipes/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +13,7 @@
     "@types/react-dom": "^18.2.7",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.14.1",
@@ -22,6 +24,8 @@
     "zustand": "^4.3.9"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

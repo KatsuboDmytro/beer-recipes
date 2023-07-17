@@ -11,8 +11,8 @@ export const App: FC<AppProps> = () => {
     <>
       <Header />
       <Routes>
-        <Route path='/' element={<RecipesPage />} />
-        <Route path='/:id' element={<BeerInfoPage />} />
+        <Route path='/beer-recipes/' element={<RecipesPage />} />
+        <Route path='/beer-recipes/:id' element={<BeerInfoPage />} />
       </Routes>
     </>
   );
