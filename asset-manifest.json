@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/beer-recipes/static/css/main.1f33d6d8.css",
-    "main.js": "/beer-recipes/static/js/main.6333ed00.js",
+    "main.js": "/beer-recipes/static/js/main.d443b165.js",
     "index.html": "/beer-recipes/index.html",
     "main.1f33d6d8.css.map": "/beer-recipes/static/css/main.1f33d6d8.css.map",
-    "main.6333ed00.js.map": "/beer-recipes/static/js/main.6333ed00.js.map"
+    "main.d443b165.js.map": "/beer-recipes/static/js/main.d443b165.js.map"
   },
   "entrypoints": [
     "static/css/main.1f33d6d8.css",
-    "static/js/main.6333ed00.js"
+    "static/js/main.d443b165.js"
   ]
 }
