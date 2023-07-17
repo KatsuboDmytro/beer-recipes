@@ -26,7 +26,7 @@ export const BeerCard: FC<BeerCardProps> = ({ id, image_url, name, firstBrewed, 
   };
 
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/beer-recipes/${id}`}>
       <div 
         className={`flex items-center border-2 border-gray-100 rounded-2xl p-6 mb-6 hover:bg-gray-100 
         ${checked && 'bg-gray-200 scale-105'}`}
